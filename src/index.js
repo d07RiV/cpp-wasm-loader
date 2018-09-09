@@ -465,7 +465,7 @@ exports.default = async function loader(content) {
 		let wasmContent = "";
 		let wasmFileName = this.resourcePath.split(/\\|\//gmi).pop().split(".").shift() + ".wasm";
 		if (buildWASM) {
-			let wasmFlags = [this.resourcePath, '-s', 'WASM=1', "-s", "BINARYEN=1", this.minimize ? "-Os" : "-O1"];
+			let wasmFlags = [this.resourcePath, '-s', 'WASM=1', "-s", "BINARYEN=1"];
 
 			if (options.emccFlags && typeof options.emccFlags === "function") {
 				wasmFlags = options.emccFlags(wasmFlags, "wasm");
